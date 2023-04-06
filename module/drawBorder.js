@@ -1,4 +1,4 @@
-import { ctx, width, height, blockSize } from "/index.js";
+import { ctx, width, height, blockSize } from "../index.js";
 
 export default function drawBorder() {
   // 경계선 그리기

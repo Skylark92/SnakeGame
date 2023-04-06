@@ -1,4 +1,4 @@
-import { ctx, blockSize } from "/index.js";
+import { ctx, blockSize } from "../index.js";
 
 export default class Block {
   constructor(col = 0, row = 0) {

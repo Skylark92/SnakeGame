@@ -1,8 +1,8 @@
-import drawBorder from "/module/drawBorder.js";
-import drawScore from "/module/drawScore.js";
-import Snake from "/module/Snake.js";
-import Apple from "/module/Apple.js";
-import Score from "/module/Score.js";
+import drawBorder from "./module/drawBorder.js";
+import drawScore from "./module/drawScore.js";
+import Snake from "./module/Snake.js";
+import Apple from "./module/Apple.js";
+import Score from "./module/Score.js";
 
 const snakeGameCanvas = document.getElementById("snake-game-canvas");
 const ctx = snakeGameCanvas.getContext("2d");

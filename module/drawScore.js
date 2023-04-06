@@ -1,4 +1,4 @@
-import { ctx, score, blockSize } from "/index.js";
+import { ctx, score, blockSize } from "../index.js";
 
 export default function drawScore() {
   // 점수 표시하기

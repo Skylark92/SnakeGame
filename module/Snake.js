@@ -1,6 +1,6 @@
-import Block from "/module/Block.js";
-import gameOver from "/module/gameOver.js";
-import { score, widthInBlocks, heightInBlocks, apple } from "/index.js";
+import Block from "./Block.js";
+import gameOver from "./gameOver.js";
+import { score, widthInBlocks, heightInBlocks, apple } from "../index.js";
 
 export default class Snake {
   constructor() {

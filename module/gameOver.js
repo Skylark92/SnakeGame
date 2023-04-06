@@ -1,4 +1,4 @@
-import { ctx, width, height, gameOn } from "/index.js";
+import { ctx, width, height, gameOn } from "../index.js";
 
 export default function gameOver() {
   // 게임 종료 화면 표시

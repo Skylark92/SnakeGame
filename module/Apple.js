@@ -1,5 +1,5 @@
-import { heightInBlocks, widthInBlocks } from "/index.js";
-import Block from "/module/Block.js";
+import { heightInBlocks, widthInBlocks } from "../index.js";
+import Block from "./Block.js";
 
 export default class Apple {
   constructor() {
