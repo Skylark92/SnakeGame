@@ -39,10 +39,7 @@ export default class SnakeGame {
     this.isOver = true;
     // 게임 종료 화면 표시
     clearInterval(this.game);
-    ctx.font = "60px Courier";
-    ctx.fillStyle = "Black";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
+    this.inGameText(60);
     ctx.fillText("Game Over", width / 2, height / 2);
   }
 
@@ -54,6 +51,20 @@ export default class SnakeGame {
       this.isOver = false;
 
       this.set();
+      this.notice();
     } else this.start();
+  }
+
+  notice() {
+    this.inGameText(20);
+    ctx.fillText("방향키 및 W, A, S, D - 이동", Math.floor(width / 2), Math.floor(height / 3));
+    ctx.fillText("Space Bar - 일시 정지", Math.floor(width / 2), Math.floor(height / 3 * 2));
+  }
+
+  inGameText(fontSize) {
+    ctx.font = `${fontSize}px Courier`;
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
   }
 }

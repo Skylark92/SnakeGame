@@ -13,6 +13,7 @@ const heightInBlocks = height / blockSize;
 const snakeGame = new SnakeGame();
 
 snakeGame.set();
+snakeGame.notice();
 
 const app = document.querySelector("body");
 
