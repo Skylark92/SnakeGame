@@ -37,4 +37,11 @@ app.addEventListener("keydown", (event) => {
   }
 })
 
+const btn = document.querySelector(".snake-game-start-button");
+
+btn.addEventListener("click", () => {
+  snakeGame.reset();
+  btn.blur();
+})
+
 export { ctx, width, height, blockSize, widthInBlocks, heightInBlocks, snakeGame };

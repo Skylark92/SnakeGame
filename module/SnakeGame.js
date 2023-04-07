@@ -9,6 +9,7 @@ export default class SnakeGame {
     this.snake = new Snake();
     this.apple = new Apple();
     this.inProgress = false;
+    this.isOver = false;
 
     this.set = () => {
       ctx.clearRect(0, 0, width, height);
@@ -35,6 +36,7 @@ export default class SnakeGame {
   }
 
   over() {
+    this.isOver = true;
     // 게임 종료 화면 표시
     clearInterval(this.game);
     ctx.font = "60px Courier";
@@ -42,5 +44,16 @@ export default class SnakeGame {
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("Game Over", width / 2, height / 2);
+  }
+
+  reset() {
+    if (this.isOver) {
+      this.snake = new Snake();
+      this.apple = new Apple();
+      this.inProgress = false;
+      this.isOver = false;
+
+      this.set();
+    } else this.start();
   }
 }
