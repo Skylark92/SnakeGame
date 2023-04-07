@@ -22,10 +22,10 @@ const directions = {
   ArrowUp: "up",
   ArrowRight: "right",
   ArrowDown: "down",
-  KeyA: "left",
-  KeyD: "right",
-  KeyS: "down",
-  KeyW: "up",
+  a: "left",
+  d: "right",
+  s: "down",
+  w: "up",
   " ": "space"
 }
 
