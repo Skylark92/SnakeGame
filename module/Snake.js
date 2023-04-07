@@ -4,9 +4,9 @@ import { widthInBlocks, heightInBlocks, snakeGame } from "../index.js";
 export default class Snake {
   constructor() {
     this.segments = [
-      new Block(7, 5),
-      new Block(6, 5),
-      new Block(5, 5)
+      new Block(Math.floor(widthInBlocks / 2) + 1, Math.floor(heightInBlocks / 2)),
+      new Block(Math.floor(widthInBlocks / 2), Math.floor(heightInBlocks / 2)),
+      new Block(Math.floor(widthInBlocks / 2) - 1, Math.floor(heightInBlocks / 2))
     ]
 
     this.score = 0;
