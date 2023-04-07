@@ -3,7 +3,7 @@ import Block from "./Block.js";
 
 export default class Apple {
   constructor() {
-    this.position = new Block(10, 10);
+    this.move();
   }
 
   draw() {

@@ -1,8 +1,4 @@
-import drawBorder from "./module/drawBorder.js";
-import drawScore from "./module/drawScore.js";
-import Snake from "./module/Snake.js";
-import Apple from "./module/Apple.js";
-import Score from "./module/Score.js";
+import SnakeGame from "./module/SnakeGame.js";
 
 const snakeGameCanvas = document.getElementById("snake-game-canvas");
 const ctx = snakeGameCanvas.getContext("2d");
@@ -14,39 +10,31 @@ const blockSize = 10;
 const widthInBlocks = width / blockSize;
 const heightInBlocks = height / blockSize;
 
-const score = new Score(0);
+const snakeGame = new SnakeGame();
 
-const snake = new Snake();
-const apple = new Apple();
-
-const gameOn = setInterval(() => {
-  ctx.clearRect(0, 0, width, height);
-  drawScore();
-  snake.move();
-  snake.draw();
-  apple.draw();
-  drawBorder();
-}, 100)
+snakeGame.set();
 
 const app = document.querySelector("body");
 
 const directions = {
-  37: "left",
-  38: "up",
-  39: "right",
-  40: "down",
-  65: "left",
-  68: "right",
-  83: "down",
-  87: "up",
-
+  ArrowLeft: "left",
+  ArrowUp: "up",
+  ArrowRight: "right",
+  ArrowDown: "down",
+  KeyA: "left",
+  KeyD: "right",
+  KeyS: "down",
+  KeyW: "up",
+  " ": "space"
 }
 
 app.addEventListener("keydown", (event) => {
-  const newDirection = directions[event.keyCode];
-  if (newDirection !== undefined) {
-    snake.setDirection(newDirection);
+  const newDirection = directions[event.key];
+  if (newDirection === "space") {
+    snakeGame.start();
+  } else if (newDirection !== undefined && newDirection !== "space") {
+    snakeGame.snake.setDirection(newDirection);
   }
 })
 
-export { ctx, width, height, score, blockSize, gameOn, widthInBlocks, heightInBlocks, apple };
+export { ctx, width, height, blockSize, widthInBlocks, heightInBlocks, snakeGame };

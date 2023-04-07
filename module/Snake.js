@@ -1,6 +1,5 @@
 import Block from "./Block.js";
-import gameOver from "./gameOver.js";
-import { score, widthInBlocks, heightInBlocks, apple } from "../index.js";
+import { widthInBlocks, heightInBlocks, snakeGame } from "../index.js";
 
 export default class Snake {
   constructor() {
@@ -10,6 +9,7 @@ export default class Snake {
       new Block(5, 5)
     ]
 
+    this.score = 0;
     this.direction = "right";
     this.nextDirection = "right";
   }
@@ -37,15 +37,17 @@ export default class Snake {
     }
 
     if (this.checkCollision(newHead)) {
-      gameOver();
+      snakeGame.over();
       return;
     }
 
     this.segments.unshift(newHead);
 
-    if (newHead.equal(apple.position)) {
-      score.up();
-      apple.move();
+    if (newHead.equal(snakeGame.apple.position)) {
+      this.score++;
+      while (this.segments.filter(block => block.equal(snakeGame.apple.position)).length > 0) {
+        snakeGame.apple.move();
+      }
     } else {
       this.segments.pop();
     }
